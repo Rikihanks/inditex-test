@@ -80,8 +80,6 @@ public class PricingServiceTest {
         when(pricingPersistenceOutputPort.findByBrandIdAndProductIdAndDate(any(), any(), any()))
                 .thenReturn(Optional.empty());
 
-        assertThrows(PriceNotFoundException.class, () -> {
-            pricingService.getPricing(applicationDate, productId, brandId);
-        });
+        assertThrows(PriceNotFoundException.class, () -> pricingService.getPricing(applicationDate, productId, brandId));
     }
 }

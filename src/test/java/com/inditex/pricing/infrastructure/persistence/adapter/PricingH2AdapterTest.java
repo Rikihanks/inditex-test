@@ -1,6 +1,5 @@
 package com.inditex.pricing.infrastructure.persistence.adapter;
 
-import com.inditex.pricing.application.mapper.PricingServiceMapper;
 import com.inditex.pricing.domain.model.Pricing;
 import com.inditex.pricing.infrastructure.persistence.PricingJpaRepository;
 import com.inditex.pricing.infrastructure.persistence.entity.PriceEntity;
@@ -9,10 +8,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.context.annotation.Import;
 
 import java.time.LocalDateTime;
 
