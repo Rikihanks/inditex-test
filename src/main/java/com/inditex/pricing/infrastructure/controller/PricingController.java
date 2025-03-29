@@ -5,6 +5,8 @@ import com.inditex.pricing.application.ports.in.GetPricingInputPort;
 import com.inditex.pricing.infrastructure.rest.dto.GetPricingRestResponse;
 import com.inditex.pricing.infrastructure.rest.mapper.PricingRestMapper;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
@@ -27,13 +29,14 @@ public class PricingController {
     }
 
     @GetMapping("/getPricing")
-    public GetPricingRestResponse getPricing(
+    public ResponseEntity<GetPricingRestResponse> getPricing(
             @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime date,
             @RequestParam Long productId,
             @RequestParam Long brandId) {
 
         PricingDtoResponse response = getPricingInputPort.getPricing(date, productId, brandId);
-        return mapper.toRestResponse(response);
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(mapper.toRestResponse(response));
     }
 
 }
