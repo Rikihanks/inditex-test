@@ -11,6 +11,7 @@ This project provides a REST API to obtain pricing information for specific prod
 - Mockito
 - JUnit
 - H2 Database
+- GitHub Actions for compiling and testing with maven
 
 ## Project Structure
 
