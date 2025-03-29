@@ -2,12 +2,9 @@ package com.inditex.pricing.infrastructure.controller;
 
 import com.inditex.pricing.application.ports.dto.PricingDtoResponse;
 import com.inditex.pricing.application.ports.in.GetPricingInputPort;
-import com.inditex.pricing.domain.exception.PriceNotFoundException;
 import com.inditex.pricing.infrastructure.rest.dto.GetPricingRestResponse;
 import com.inditex.pricing.infrastructure.rest.mapper.PricingRestMapper;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
@@ -39,9 +36,4 @@ public class PricingController {
         return mapper.toRestResponse(response);
     }
 
-
-    @ExceptionHandler(PriceNotFoundException.class)
-    public ResponseEntity<String> handlePriceNotFoundException(PriceNotFoundException ex) {
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
-    }
 }
