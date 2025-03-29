@@ -51,7 +51,8 @@ The  use of CQRS (Command Query Responsibility Segregation) was thought of but n
 
 ## Tests
 
-Tests are located in the `src/test/java/com/inditex/pricing/infrastructure/controller` package. `MockMvc` and `Mockito` are used for unit and integration testing.
+Tests are located in the `src/test/java/com/inditex/pricing/*` package. 
+`MockMvc` and `Mockito` are used for unit and integration testing.
 
 ### Running Tests
 
