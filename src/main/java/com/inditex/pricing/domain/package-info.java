@@ -1,0 +1,1 @@
+package com.inditex.pricing.domain;
